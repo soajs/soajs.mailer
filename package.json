@@ -1,0 +1,28 @@
+{
+  "name": "soajs.mailer",
+  "description": "soajs mailer is to send custom email with captcha",
+  "version": "1.0.3",
+  "author": {
+    "name": "soajs team",
+    "email": "team@soajs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:soajs/soajs.mailer.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "devDependencies": {
+    "grunt": "1.0.4",
+    "grunt-contrib-jshint": "2.1.0"
+  },
+  "dependencies": {
+    "request": "2.88.2",
+    "soajs": "4.0.16"
+  }
+}

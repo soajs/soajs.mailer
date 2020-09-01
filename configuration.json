@@ -1,0 +1,10 @@
+{
+  "GOOGLE_CAPTCHA_KEY": "",
+  "GOOGLE_CAPTCHA_URL": "",
+  "mail":{
+    "transport":{
+
+    },
+    "to": "team@soajs.org"
+  }
+}
