@@ -11,6 +11,10 @@
 const soajs = require("soajs");
 const request = require("request");
 
+if (!process.env.SOAJS_MAILER_CONFIGURATION) {
+	throw new Error('You must set SOAJS_MAILER_CONFIGURATION to point to a configuration.js file, you can find an example at repository root level.');
+}
+
 const configuration = require(process.env.SOAJS_MAILER_CONFIGURATION);
 
 function checkCaptcha(req, res, cb) {
