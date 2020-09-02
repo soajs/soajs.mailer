@@ -91,35 +91,6 @@ let sendMail = (req, res, data, subject, type, cb) => {
 	});
 };
 
-let corsMW = () => {
-	return (req, res, next) => {
-		let method = req.method && req.method.toUpperCase && req.method.toUpperCase();
-		let origin = '*';
-		let credentials = 'true';
-		let methods = 'GET,HEAD,PUT,PATCH,POST,DELETE';
-		let headers = 'Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
-		let maxage = 1728000;
-		if (method === 'OPTIONS') {
-			res.setHeader('Access-Control-Allow-Origin', origin);
-			res.setHeader('Access-Control-Allow-Credentials', credentials);
-			res.setHeader('Access-Control-Allow-Methods', methods);
-			res.setHeader('Access-Control-Allow-Headers', headers);
-			res.setHeader('Access-Control-Max-Age', maxage);
-			
-			res.statusCode = 204;
-			res.end();
-		}
-		else {
-			res.setHeader('Access-Control-Allow-Origin', origin);
-			res.setHeader('Access-Control-Allow-Credentials', credentials);
-			res.setHeader('Access-Control-Expose-Headers', headers);
-			next();
-		}
-	};
-};
-
-
 module.exports = {
-	"sendMail": sendMail,
-	"corsMW": corsMW
+	"sendMail": sendMail
 };

@@ -25,8 +25,6 @@ function checkIfError(req, res, data, cb) {
 function run(serviceStartCb) {
 	service.init(() => {
 		
-		service.app.use(lib.corsMW());
-		
 		//https://api.soajs.org/soajsorg/...
 		service.post("/soajsorg/sendMessage", (req, res) => {
 			let data = req.soajs.inputmaskData;
